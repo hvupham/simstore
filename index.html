@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TEKi SIMストア — 格安SIM販売</title>
+  <meta name="description" content="TEKi株式会社の公式SIM販売ページ。オンラインで簡単申し込み・最短翌日発送。" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-md bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-white font-bold">TEKi</div>
+        <div>
+          <div class="font-semibold">TEKi株式会社</div>
+          <div class="text-xs text-slate-500">格安SIM</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#home" class="hover:underline">ホーム</a>
+        <a href="#products" class="hover:underline">製品一覧</a>
+        <a href="#about" class="hover:underline">会社概要</a>
+        <a href="#terms" class="hover:underline">利用規約</a>
+        <!-- 製品セキュリティ -->
+        <a href="#security" class="hover:underline">製品セキュリティ</a>
+        <!-- 情報セキュリティポリシー -->
+        <a href="#privacy" class="hover:underline">情報セキュリティポリシー</a>
+        <!-- 返品・返金に関するポリシー -->
+        <a href="#refund" class="hover:underline">返品・返金ポリシー</a>
+        <!-- 特定商取引法に基づく -->
+        <a href="#legal" class="hover:underline">特定商取引法に基づく表示</a>
+        <!-- <a href="#contact" class="px-4 py-2 bg-emerald-600 text-white rounded-md">お問い合わせ</a> -->
+      </nav>
+      <button class="md:hidden p-2 rounded-md bg-slate-100" aria-label="menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">TEKiの格安SIM — シンプル・安心・低価格</h1>
+      <p class="mt-4 text-slate-600">ドコモ/au/ソフトバンク回線対応。オンラインで申し込み完了、最短翌日発送。法人・海外対応・eSIMなど多数プラン。</p>
+      <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <li class="flex items-start gap-3"><div class="rounded-full bg-emerald-100 text-emerald-700 p-2">✓</div><div class="text-sm">送料無料（条件あり）</div></li>
+        <li class="flex items-start gap-3"><div class="rounded-full bg-emerald-100 text-emerald-700 p-2">✓</div><div class="text-sm">契約縛りなしプランあり</div></li>
+        <li class="flex items-start gap-3"><div class="rounded-full bg-emerald-100 text-emerald-700 p-2">✓</div><div class="text-sm">24時間メールサポート</div></li>
+        <li class="flex items-start gap-3"><div class="rounded-full bg-emerald-100 text-emerald-700 p-2">✓</div><div class="text-sm">最短翌日発送</div></li>
+      </ul>
+      <div class="mt-6 flex gap-3">
+        <a href="#products" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-3 rounded-md shadow">製品を見る</a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-md border">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="bg-gradient-to-tr from-emerald-50 to-white rounded-2xl p-6 shadow-lg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Selection_of_SIM_cards.JPG" alt="SIMカード" class="rounded-lg w-full object-cover h-72" />
+        <div class="mt-4 text-sm text-slate-500">対応回線: ドコモ / au / ソフトバンク · 発送: 最短翌日</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products (10 items) -->
+  <section id="products" class="max-w-7xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-semibold mb-6">製品一覧（10アイテム）</h2>
+    <div class="mb-4 flex gap-3 items-center">
+      <input id="search" placeholder="検索 (例: 3GB, eSIM)" class="border px-3 py-2 rounded w-64" />
+      <select id="filterType" class="border px-3 py-2 rounded">
+        <option value="all">タイプ: 全て</option>
+        <option value="データ">データ</option>
+        <option value="音声">音声</option>
+        <option value="eSIM">eSIM</option>
+        <option value="海外">海外</option>
+      </select>
+      <button id="clear" class="px-3 py-2 border rounded">クリア</button>
+    </div>
+
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Product cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- About / Company Info -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-10 bg-white rounded-lg shadow-sm">
+    <h2 class="text-2xl font-semibold mb-4">会社概要 / Company Profile</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <table class="w-full text-sm">
+          <tbody>
+            <tr><th class="text-left py-2">会社名</th><td class="py-2">TEKi株式会社 / TEKi Corporation</td></tr>
+            <tr><th class="text-left py-2">代表取締役</th><td class="py-2">ファム　バン　ルアン / PHAM VAN LUAN</td></tr>
+            <tr><th class="text-left py-2">本社</th><td class="py-2">〒132-0035 東京都江戸川区平井６丁目１４－１２ ＪＥビル３０１号室<br/>Room 301, JE Building, 6-14-12 Hirai, Edogawa-ku, Tokyo 132-0035</td></tr>
+            <tr><th class="text-left py-2">電話番号</th><td class="py-2">03-6672-0135</td></tr>
+            <tr><th class="text-left py-2">営業時間</th><td class="py-2">9:00～19:00</td></tr>
+            <tr><th class="text-left py-2">定休日</th><td class="py-2">受付時間 09:00-19:00（無休365日）<br/>※受付時間外の場合は、メールにてお問い合わせください。</td></tr>
+            <tr><th class="text-left py-2">Email</th><td class="py-2">info@teki-corp.com</td></tr>
+            <tr><th class="text-left py-2">設立年月日</th><td class="py-2">2023/04/06</td></tr>
+            <tr><th class="text-left py-2">資本金</th><td class="py-2">500万円</td></tr>
+            <tr><th class="text-left py-2">事業内容</th><td class="py-2">携帯電話、通信機器等の販売・貸与に関する代理店業務<br/>インターネットにおけるプロバイダー及びサーバー仲介業務</td></tr>
+            <tr><th class="text-left py-2">許可証</th><td class="py-2">電気通信事業の届出番号：A-05-21347</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">取引先 / 銀行情報</h3>
+        <div class="text-sm mb-4">
+          <strong>楽天銀行</strong><br/>支店(店番号): 第三営業支店 (253)<br/>口座番号: 7456402<br/>カナ名: テキ(カ
+        </div>
+        <div class="text-sm">
+          <strong>住信SBIネット銀行</strong><br/>支店番号：法人第一支店（106）<br/>口座番号: 2188736<br/>カナ名: テキ(カ
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section id="terms" class="max-w-6xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-semibold mb-4">利用規約</h2>
+    <div class="bg-white p-6 rounded shadow-sm text-sm leading-relaxed">
+      <!-- Insert provided terms text -->
+      <pre class="whitespace-pre-wrap">この利用規約（以下，「本規約」といいます。）は，TEKi株式会社（以下，「当店」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
+
+第1条（適用）
+1. 本規約は，ユーザーと当店との間の本サービスの利用に関わる一切の関係に適用されるものとします。
+2. 当店は本サービスに関し，本規約のほか，ご利用にあたってのルール等，各種の定め（以下，「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず，本規約の一部を構成するものとします。
+3. 本規約の規定が前条の個別規定の規定と矛盾する場合には，個別規定において特段の定めなき限り，個別規定の規定が優先されるものとします。
+
+第2条（利用登録）
+4. 本サービスにおいては，登録希望者が本規約に同意の上，当店の定める方法によって利用登録を申請し，当店がこれを承認することによって，利用登録が完了するものとします。
+5. 当店は，利用登録の申請者に以下の事由があると判断した場合，利用登録の申請を承認しないことがあり，その理由については一切の開示義務を負わないものとします。
+a. 利用登録の申請に際して虚偽の事項を届け出た場合
+b. 本規約に違反したことがある者からの申請である場合
+c. その他，当店が利用登録を相当でないと判断した場合
+
+第3条（ユーザーIDおよびパスワードの管理）
+6. ユーザーは，自己の責任において，本サービスのユーザーIDおよびパスワードを適切に管理するものとします。
+7. ユーザーは，いかなる場合にも，ユーザーIDおよびパスワードを第三者に譲渡または貸与し，もしくは第三者と共用することはできません。当店は，ユーザーIDとパスワードの組み合わせが登録情報と一致してログインされた場合には，そのユーザーIDを登録しているユーザー自身による利用とみなします。
+8. ユーザーID及びパスワードが第三者によって使用されたことによって生じた損害は，当店に故意又は重大な過失がある場合を除き，当店は一切の責任を負わないものとします。
+
+第4条（利用料金および支払方法）
+9. ユーザーは，本サービスの有料部分の対価として，当店が別途定め，本ウェブサイトに表示する利用料金を，当店が指定する方法により支払うものとします。
+10. ユーザーが利用料金の支払を遅滞した場合には，ユーザーは年14．6％の割合による遅延損害金を支払うものとします。
+
+第5条（禁止事項）
+ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。
+11. 法令または公序良俗に違反する行為
+12. 犯罪行為に関連する行為
+13. 本サービスの内容等，本サービスに含まれる著作権，商標権ほか知的財産権を侵害する行為
+14. 当店，ほかのユーザー，またはその他第三者のサーバーまたはネットワークの機能を破壊したり，妨害したりする行為
+15. 本サービスによって得られた情報を商業的に利用する行為
+16. 当店のサービスの運営を妨害するおそれのある行為
+17. 不正アクセスをし，またはこれを試みる行為
+18. 他のユーザーに関する個人情報等を収集または蓄積する行為
+19. 不正な目的を持って本サービスを利用する行為
+20. 本サービスの他のユーザーまたはその他の第三者に不利益，損害，不快感を与える行為
+21. 他のユーザーに成りすます行為
+22. 当店が許諾しない本サービス上での宣伝，広告，勧誘，または営業行為
+23. 面識のない異性との出会いを目的とした行為
+24. 当店のサービスに関連して，反社会的勢力に対して直接または間接に利益を供与する行為
+25. その他，当店が不適切と判断する行為
+
+第6条（本サービスの提供の停止等）
+26. 当店は，以下のいずれかの事由があると判断した場合，ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。
+a. 本サービスにかかるコンピュータシステムの保守点検または更新を行う場合
+b. 地震，落雷，火災，停電または天災などの不可抗力により，本サービスの提供が困難となった場合
+c. コンピュータまたは通信回線等が事故により停止した場合
+d. その他，当店が本サービスの提供が困難と判断した場合
+
+第7条（利用制限および登録抹消）
+28. 当店は，ユーザーが以下のいずれかに該当する場合には，事前の通知なく，ユーザーに対して，本サービスの全部もしくは一部の利用を制限し，またはユーザーとしての登録を抹消することができるものとします。
+a. 本規約のいずれかの条項に違反した場合
+b. 登録事項に虚偽の事実があることが判明した場合
+c. 料金等の支払債務の不履行があった場合
+d. 当店からの連絡に対し，一定期間返答がない場合
+e. 本サービスについて，最終の利用から一定期間利用がない場合
+f. その他，当店が本サービスの利用を適当でないと判断した場合
+
+第8条（退会）
+ユーザーは，当店の定める退会手続により，本サービスから退会できるものとします。
+
+第9条（保証の否認および免責事項）
+30. 当店は，本サービスに事実上または法律上の瑕疵（安全性，信頼性，正確性，完全性，有効性，特定の目的への適合性，セキュリティなどに関する欠陥，エラーやバグ，権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。
+31. 当店は，本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし，本サービスに関する当店とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合，この免責規定は適用されません。
+
+第10条（サービス内容の変更等）
+当店は，ユーザーに通知することなく，本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし，これによってユーザーに生じた損害について一切の責任を負いません。
+
+第11条（利用規約の変更）
+当店は，必要と判断した場合には，ユーザーに通知することなくいつでも本規約を変更することができるものとします。なお，本規約の変更後，本
+</pre>
+    </div>
+  </section>
+
+  <!-- security -->
+   <!-- 製品セキュリティ Section -->
+<section id="security" class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">製品セキュリティ</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm leading-relaxed text-gray-700">
+      <p>当社はお客様に安全で安心な通信サービスを提供するために、最新のセキュリティ技術を導入しています。SIMカードの不正利用防止やデータ保護のため、通信の暗号化や本人確認プロセスを徹底しています。</p>
+      <ul class="list-disc list-inside mt-4">
+        <li>SIMの不正コピー防止</li>
+        <li>通信データの暗号化</li>
+        <li>不正アクセスの監視システム</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 情報セキュリティポリシー Section -->
+<section id="privacy" class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">情報セキュリティポリシー</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm leading-relaxed text-gray-700">
+      <p>当社はお客様の個人情報を適切に管理・保護し、法令および社内規定に基づいて安全な取り扱いを行います。情報漏洩、紛失、改ざんを防ぐために、アクセス制限や定期的なセキュリティ点検を実施しています。</p>
+      <ul class="list-disc list-inside mt-4">
+        <li>個人情報の暗号化保存</li>
+        <li>アクセス権限の厳格管理</li>
+        <li>セキュリティ教育の定期実施</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 返品・返金ポリシー Section -->
+<section id="refund" class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">返品・返金ポリシー</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm leading-relaxed text-gray-700">
+      <p>商品到着後7日以内であれば、未使用・未開封の商品に限り返品・返金を承ります。通信開始後のSIMカードは返品対象外となります。</p>
+      <ul class="list-disc list-inside mt-4">
+        <li>返品受付期間：商品到着後7日以内</li>
+        <li>返金方法：お支払い方法に応じた返金</li>
+        <li>返品送料：お客様負担（不良品を除く）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 特定商取引法に基づく表示 Section -->
+<section id="legal" class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">特定商取引法に基づく表示</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm leading-relaxed text-gray-700">
+      <p>販売業者名：SimStore Japan株式会社</p>
+      <p>所在地：〒100-0001 東京都千代田区千代田1-1</p>
+      <p>電話番号：03-1234-5678</p>
+      <p>販売責任者：山田 太郎</p>
+      <p>販売価格：各商品ページに記載</p>
+      <p>お支払い方法：クレジットカード、銀行振込、コンビニ決済</p>
+      <p>商品引渡時期：ご注文確認後2〜3営業日以内に発送</p>
+    </div>
+  </div>
+</section>
+  
+
+  <!-- Contact / Order Form -->
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-semibold mb-4">お問い合わせ・ご注文</h2>
+    <div class="bg-white p-6 rounded shadow-sm">
+      <form id="orderForm" class="grid grid-cols-1 gap-4">
+        <input name="name" placeholder="お名前（必須）" class="border px-3 py-2 rounded" required />
+        <input name="email" type="email" placeholder="メールアドレス（必須）" class="border px-3 py-2 rounded" required />
+        <input name="phone" placeholder="電話番号（必須）" class="border px-3 py-2 rounded" required />
+        <select id="productSelect" class="border px-3 py-2 rounded">
+          <!-- options injected by JS -->
+        </select>
+        <textarea name="addr" placeholder="配送先住所（任意）" class="border px-3 py-2 rounded" rows="3"></textarea>
+        <label class="flex items-center gap-2"><input type="checkbox" id="agree" required /> 利用規約に同意します（必須）</label>
+        <div class="flex gap-3">
+          <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded">注文を送信</button>
+          <button type="reset" class="px-4 py-2 border rounded">リセット</button>
+        </div>
+        <div id="formMsg" class="text-sm text-green-700 hidden">送信しました。確認メールをお送りします（デモ）。</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-6 text-sm">
+      <div class="mb-4">© 2025 TEKi株式会社</div>
+      <div>住所: 〒132-0035 東京都江戸川区平井６丁目１４－１２ ＪＥビル３０１号室</div>
+      <div class="mt-2">電話: 03-6672-0135 · Email: info@teki-corp.com</div>
+    </div>
+  </footer>
+
+  <script>
+    // Product data (10 items)
+    const PRODUCTS = [
+      {id:'p1', name:'データ専用SIM 1GB', type:'データ', plan:'1GB', price:490, img:'./images/sim1.jpg'},
+      {id:'p2', name:'データ専用SIM 3GB', type:'データ', plan:'3GB', price:690, img:'./images/sim1.jpg'},
+      {id:'p3', name:'データ専用SIM 5GB', type:'データ', plan:'5GB', price:890, img:'./images/sim1.jpg'},
+      {id:'p4', name:'音声通話SIM 3GB', type:'音声', plan:'3GB', price:1280, img:'./images/sim1.jpg'},
+        {id:'p5', name:'音声通話SIM 10GB', type:'音声', plan:'10GB', price:1980, img:'./images/sim1.jpg'},
+        {id:'p6', name:'eSIM 3GB', type:'eSIM', plan:'3GB', price:980, img:'./images/sim1.jpg'},
+        {id:'p7', name:'eSIM 10GB', type:'eSIM', plan:'10GB', price:1480, img:'./images/sim1.jpg'},
+        {id:'p8', name:'海外対応SIM 5GB', type:'海外', plan:'5GB', price:1680, img:'./images/sim1.jpg'},
+       ];
+
+    const grid = document.getElementById('grid');
+    const productSelect = document.getElementById('productSelect');
+
+    function renderProducts(list){
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl shadow p-4 flex flex-col';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}" class="rounded mb-3 object-cover h-40 w-full" />
+          <div class="flex-1">
+            <div class="text-sm text-gray-500">${p.type} · ${p.plan}</div>
+            <h3 class="font-semibold mt-1">${p.name}</h3>
+            <div class="mt-2 text-lg text-blue-600 font-bold">¥${p.price.toLocaleString()}</div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button class="addBtn flex-1 bg-emerald-600 text-white px-3 py-2 rounded">カートに追加</button>
+            <button class="detailBtn flex-1 border px-3 py-2 rounded">詳細</button>
+          </div>
+        `;
+        // attach events
+        card.querySelector('.addBtn').addEventListener('click', ()=> addToCart(p));
+        card.querySelector('.detailBtn').addEventListener('click', ()=> openDetail(p));
+        grid.appendChild(card);
+
+        // add to select
+        const opt = document.createElement('option'); opt.value = p.id; opt.text = `${p.name} - ¥${p.price}`; productSelect.appendChild(opt);
+      });
+    }
+
+    // Simple cart
+    let CART = [];
+    function addToCart(p){
+      const found = CART.find(x=>x.id===p.id);
+      if(found) found.qty +=1; else CART.push({...p, qty:1});
+      alert('カートに追加しました: ' + p.name);
+    }
+
+    // Detail modal
+    function openDetail(p){
+      const modal = document.createElement('div');
+      modal.className = 'fixed inset-0 bg-black/40 z-50 flex items-center justify-center';
+      modal.innerHTML = `
+        <div class="bg-white rounded-lg max-w-2xl w-full p-6 relative">
+          <button id="closeModal" class="absolute top-3 right-3 text-gray-500">✕</button>
+          <div class="flex gap-6">
+            <img src="${p.img}" alt="" class="w-48 h-48 object-cover rounded" />
+            <div>
+              <div class="text-sm text-gray-500">${p.type} · ${p.plan}</div>
+              <h2 class="text-2xl font-bold mt-1">${p.name}</h2>
+              <div class="mt-4 text-xl text-blue-600 font-bold">¥${p.price.toLocaleString()}</div>
+              <p class="mt-3 text-sm text-gray-600">商品説明：簡単申し込みで最短翌日発送。本人確認書類が必要になる場合があります。</p>
+              <div class="mt-4 flex gap-3">
+                <button id="addCart" class="bg-emerald-600 text-white px-4 py-2 rounded">カートに追加</button>
+                <button id="buyNow" class="border px-4 py-2 rounded">今すぐ注文</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      document.body.appendChild(modal);
+      modal.querySelector('#closeModal').addEventListener('click', ()=> modal.remove());
+      modal.querySelector('#addCart').addEventListener('click', ()=>{ addToCart(p); modal.remove(); });
+      modal.querySelector('#buyNow').addEventListener('click', ()=>{ document.getElementById('productSelect').value = p.id; modal.remove(); window.scrollTo({top: document.getElementById('contact').offsetTop-60, behavior:'smooth'}); });
+    }
+
+    // Search / Filter
+    const searchEl = document.getElementById('search');
+    const filterEl = document.getElementById('filterType');
+    const clearBtn = document.getElementById('clear');
+    function applyFilter(){
+      const q = searchEl.value.trim().toLowerCase();
+      const type = filterEl.value;
+      const filtered = PRODUCTS.filter(p=>{
+        if(type!=='all' && p.type!==type) return false;
+        if(q && !(p.name.toLowerCase().includes(q) || p.plan.toLowerCase().includes(q) || p.type.toLowerCase().includes(q))) return false;
+        return true;
+      });
+      renderProducts(filtered);
+    }
+    searchEl.addEventListener('input', applyFilter);
+    filterEl.addEventListener('change', applyFilter);
+    clearBtn.addEventListener('click', ()=>{searchEl.value=''; filterEl.value='all'; applyFilter();});
+
+    // Order form submit (demo)
+    const orderForm = document.getElementById('orderForm');
+    orderForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(orderForm);
+      const obj = Object.fromEntries(data.entries());
+      // show demo message
+      document.getElementById('formMsg').classList.remove('hidden');
+      setTimeout(()=>{ document.getElementById('formMsg').classList.add('hidden'); orderForm.reset(); }, 3000);
+      console.log('Order (demo)', obj);
+      alert('ご注文を受け付けました（デモ）。メールで注文番号を送信します。');
+    });
+
+    // init
+    document.addEventListener('DOMContentLoaded', ()=>{
+      renderProducts(PRODUCTS);
+    });
+  </script>
+</body>
+</html>
